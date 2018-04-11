@@ -1,0 +1,32 @@
+<md-card class="project-card">
+  <md-card-header>
+    <md-card-subtitle>
+      Total experiments {{totalExperiments}} - {{finishedExperiments}} finished.
+      <md-progress-bar
+        class="example-margin"
+        [color]="'accent'"
+        [mode]="'determinate'"
+        [value]="completedPercent">
+      </md-progress-bar>
+
+      <h2>{{name}}
+        <span *ngIf="paramsVisible">
+          <md-icon (click)="paramsVisible=!paramsVisible">visibility</md-icon>
+        </span>
+        <span *ngIf="!paramsVisible">
+          <md-icon (click)="paramsVisible=!paramsVisible">visibility_off</md-icon>
+        </span>
+      </h2>
+    </md-card-subtitle>
+  </md-card-header>
+  <md-card-content *ngIf="paramsVisible">
+    <md-list class="mat-list">
+      <ul>
+      <li *ngFor="let param of parameters" class="mat-list-item">
+        <strong>{{ param.name }}</strong> {{param.value | json}}
+      </li>
+      </ul>
+    </md-list>
+  </md-card-content>
+</md-card>
+

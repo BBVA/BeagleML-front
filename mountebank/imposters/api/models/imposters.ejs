@@ -1,0 +1,35 @@
+{
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/models/get.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    }
+  }],
+  "predicates": [{
+    "equals": {
+      "path": "/api/v1/models",
+      "method": "GET"
+    }
+  }]
+},{
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/models/post.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    }
+  }],
+  "predicates": [{
+    "equals": {
+      "path": "/api/v1/models",
+      "method": "POST"
+    }
+  }]
+}

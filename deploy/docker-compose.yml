@@ -1,0 +1,34 @@
+---
+version: '3'
+
+services:
+
+  angular-seed:
+    build:
+      context: .
+      dockerfile: ../.docker/angular-seed.development.dockerfile
+    command: npm start
+    container_name: angular-seed-start
+    image: angular-seed
+    networks:
+      - dev-network
+    ports:
+      - '5555:5555'
+    depends_on:
+      - mountebank
+    volumes:
+      - ./src:/home/app/angular-seed/src
+      - ./tools:/home/app/angular-seed/tools
+
+  mountebank:
+    build:
+      context: ../mountebank
+    volumes:
+      - ../mountebank/imposters:/mb/
+    ports:
+      - '2525:2525'
+      - '8010:8010'
+
+networks:
+  dev-network:
+    driver: bridge

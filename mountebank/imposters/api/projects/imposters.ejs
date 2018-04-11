@@ -1,0 +1,53 @@
+{
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/projects/get.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    }
+  }],
+  "predicates": [{
+    "equals": {
+      "path": "/api/v1/projects",
+      "method": "GET"
+    }
+  }]
+},{
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/projects/project-experiments.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    "_behaviors": {
+      "decorate": "<%- stringify(filename, 'api/projects/random-project-experiments.ejs') %>"
+    }
+  }],
+  "predicates": [{
+    "matches": {
+      "path": "/api/v1/projects/[^/]+/experiments"
+    }
+  }]
+},{
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/projects/get-by-id.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    }
+  }],
+  "predicates": [{
+    "matches": {
+      "path": "/api/v1/projects/[^/]+"
+    }
+  }]
+}

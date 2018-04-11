@@ -1,0 +1,33 @@
+
+.col-selector {
+  float: left;
+  padding: 10px;
+  width: 200px;
+  background-color: white;
+  margin-left: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  margin-top: 10px;
+}
+
+.col-selector h4 {
+  margin: 7px;
+}
+
+.project-card .mat-list-item {
+  marginn-left: 15px;
+}
+
+.mat-list .mat-list-item {
+  display: block;
+  height: 30px;
+}
+
+.mat-list label {
+  width: 150px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+span.icon {
+  padding-left: 0px;
+}

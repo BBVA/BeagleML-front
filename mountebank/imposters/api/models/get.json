@@ -1,0 +1,5 @@
+[
+  { "id" : "5a673a0b716dff205e37e197", "create_time":"20180130A", "version" : "2", "services" : { "prueba1" : { "image" : "algorithm_model:latest", "environment" : { "METRICS_KAFKA_SERVICE" : "kafka", "METRICS_TOPIC" : "metrics", "C" : 0.1 } } }, "filename" : "algorithm.yaml" },
+  { "id" : "5a673a0b716dff205e37e198", "create_time":"20180130B", "version" : "2", "services" : { "prueba1" : { "image" : "algorithm_model:latest", "environment" : { "METRICS_KAFKA_SERVICE" : "kafka", "METRICS_TOPIC" : "metrics", "C" : 0.1 } } }, "filename" : "algorithm.yaml" },
+  { "id" : "5a673a0b716dff205e37e199", "create_time":"20180130C", "version" : "2", "services" : { "prueba1" : { "image" : "algorithm_model:latest", "environment" : { "METRICS_KAFKA_SERVICE" : "kafka", "METRICS_TOPIC" : "metrics", "C" : 0.1 } } }, "filename" : "algorithm.yaml" }
+]

@@ -1,0 +1,21 @@
+{
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/pools/experiments.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    "_behaviors": {
+      "decorate": "<%- stringify(filename, 'api/pools/random-experiments.ejs') %>"
+    }
+  }],
+  "predicates": [{
+    "equals": {
+      "path": "/api/v1/pools",
+      "method": "GET"
+    }
+  }]
+}

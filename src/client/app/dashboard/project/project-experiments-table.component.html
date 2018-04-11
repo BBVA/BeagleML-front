@@ -1,0 +1,77 @@
+<div style='float:left;width:75%; padding-top: 10px;'>
+  <div *ngIf="rows">
+    <ngx-datatable
+            #project_table
+            class="material"
+            style="height: 400px;"
+            [columnMode]="'standard'"
+            [headerHeight]="40"
+            [rowHeight]="40"
+            [footerHeight]="40"
+            [sortType]="'multi'"
+            [scrollbarH]="true"
+            [scrollbarV]="true"
+            [rows]="rows"
+            [selectionType]="'single'"
+            (select)="onSelect($event)">
+      <ngx-datatable-column
+              [cellClass]="getCellClass"
+              [sortable]="false"
+              [canAutoResize]="false"
+              [draggable]="false"
+              [resizeable]="false"
+              [width]="20">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          <md-icon *ngIf="row.state === 'pool'" style="margin-left: -12px;">play_arrow</md-icon>
+          <md-icon *ngIf="row.state === 'queue'" style="margin-left: -12px;">update</md-icon>
+          <md-icon *ngIf="row.state === 'completed'" style="margin-left: -12px;">done</md-icon>
+          <md-icon *ngIf="row.state === 'timeout'" style="margin-left: -12px;">hourglass_empty</md-icon>
+          <md-icon *ngIf="row.state === 'accuracy_limit_reached'" style="margin-left: -12px;">spellcheck</md-icon>
+          <md-icon *ngIf="row.state === 'stopped'" style="margin-left: -12px;">stopped</md-icon>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Name"></ngx-datatable-column>
+      <div *ngFor='let col of columns'>
+        <ngx-datatable-column name="{{col.name}}" prop="{{col.name}}"></ngx-datatable-column>
+      </div>
+    </ngx-datatable>
+  </div>
+</div>
+
+<div class='col-selector'>
+  <h4>Available States</h4>
+  <md-list *ngIf="allStates">
+    <md-list-item *ngFor='let state of allStates'>
+      <md-checkbox
+              [id]="state.name"
+              (change)="toggleState(state)"
+              [checked]="isCheckedState(state)">
+        <span class="icon">
+            <md-icon class="is-pool" *ngIf="state.name === 'pool'">play_arrow</md-icon>
+            <md-icon class="is-queue" *ngIf="state.name === 'queue'">update</md-icon>
+            <md-icon class="is-completed" *ngIf="state.name === 'completed'">done</md-icon>
+            <md-icon class="is-timeout" *ngIf="state.name === 'timeout'">hourglass_empty</md-icon>
+            <md-icon class="is-accuracy_limit_reached" *ngIf="state.name === 'accuracy_limit_reached'">spellcheck</md-icon>
+            <md-icon class="is-stopped" *ngIf="state.name === 'stopped'">stopped</md-icon>
+        </span>
+
+        {{state.label}}
+      </md-checkbox>
+
+    </md-list-item>
+  </md-list>
+</div>
+
+<div class='col-selector'>
+  <h4>Available Columns</h4>
+  <md-list *ngIf="allColumns">
+    <md-list-item *ngFor='let col of allColumns'>
+      <md-checkbox
+              [id]="col.name"
+              (change)="toggle(col)"
+              [checked]="isChecked(col)">
+        {{col.name}}
+      </md-checkbox>
+    </md-list-item>
+  </md-list>
+</div>

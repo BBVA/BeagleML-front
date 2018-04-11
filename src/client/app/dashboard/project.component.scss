@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  background: -webkit-linear-gradient(45deg, #fff 10%, rgba(32, 107, 192, 0.5) 100%);
+  background: linear-gradient(45deg, #fff 10%, rgba(32, 107, 192, 0.5) 100%);
+  padding: 0.5em 1em;
+
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+
+  margin: 1em;
+}

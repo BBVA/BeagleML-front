@@ -1,0 +1,44 @@
+function (request, response) {
+
+  var num_exp = 7000;
+  var experiments = [];
+  for( var i = 1; i < num_exp + 1; i ++){
+    var BATCH_SIZE = Math.floor(Math.random() * 400) + 100;
+    var HIDDEN_SIZE = Math.floor(Math.random() * 50) + 40;
+    var LEARNING_RATE = "0.0" + (Math.floor(Math.random() * 9) + 1);
+    var PRODUCTS = Math.floor(Math.random() * 9) + 1;
+    var SAVE_INTERVAL = Math.floor(Math.random() * 130) + 100;
+    var stateId = Math.floor(Math.random() * 5) + 1;
+    var properties = ['pool', 'queue', 'completed', 'timeout', 'accuracy_limit_reached', 'stopped'];
+    var state = properties[stateId];
+
+    var id = Math.random().toString(36).substring(10);
+
+    var experiment = {
+      "_id": id,
+      "create_time": "2017-04-21T09:19:48.528000",
+      "launch_time": "2017-04-21T09:20:12.631000",
+      "name": "metatestmodel1",
+      "parameters": [
+        {"name":"BATCH_SIZE", "value": BATCH_SIZE},
+        {"name":"EPOCHS", "value": "1"},
+        {"name":"HIDDEN_SIZE", "value": HIDDEN_SIZE},
+        {"name":"KAFKA_SERVICE", "value": "automodeling-kafka-svc.modeling"},
+        {"name":"LEARNING_RATE", "value": LEARNING_RATE},
+        {"name":"METRIC_INTERVAL", "value": "1"},
+        {"name":"RECOVER_SESSION", "value": "false"},
+        {"name":"PRODUCTS", "value": PRODUCTS},
+        {"name":"SAVE_INTERVAL", "value": SAVE_INTERVAL},
+        {"name":"STOP_ACCURACY", "value": "1.0"}
+      ],
+      "project_id": "58f9ceb3e14b0a00074c6daf",
+      "project_name": "metatest",
+      "template_name": "ml-ex-nn-tf-mod",
+      "state": state
+    }
+
+    experiments.push(experiment)
+  }
+
+  response.body = response.body.replace('EXPERIMENTS', JSON.stringify(experiments));
+}

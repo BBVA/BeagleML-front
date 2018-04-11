@@ -1,0 +1,20 @@
+{
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/experiments/get.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    "_behaviors": {
+      "decorate": "<%- stringify(filename, 'api/experiments/random-experiment.ejs') %>"
+    }
+  }],
+  "predicates": [{
+    "matches": {
+      "path": "/api/v1/experiments/[^/]+"
+    }
+  }]
+}

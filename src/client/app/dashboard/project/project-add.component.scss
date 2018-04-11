@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  padding: 0 16px;
+}
+
+label {
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid;
+}
+
+.hidden {
+  display: none;
+}
+
+.mat-toolbar {
+  background: #fff;
+  color: #fff;
+}
+
+a.mat-raised-button {
+  margin: 0.5em;
+}

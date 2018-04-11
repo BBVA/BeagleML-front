@@ -1,0 +1,64 @@
+{
+  "actions": {
+    "delete experiments": "/projects/58f9ceb3e14b0a00074c6daf/delete_experiments"
+  },
+  "info": {
+    "_id": "58f9ceb3e14b0a00074c6daf",
+    "experiments": [
+      "58f9ceb4e14b0a00074c6db0",
+      "58f9ceb4e14b0a00074c6db0",
+      "58f9cgb4e14b0a00074c6db0",
+      "58f9ced4e14b0a00074c6db0",
+      "58f9ceb5e14b0a00074c6db0",
+      "58f9ceb4714b0a00074c6db0",
+      "58f9ceb3314b0a00074c6db0",
+      "58f9ceb4e14we0a00074c6d0",
+      "58f9ceb4we140a00074c6db0",
+      "58f9cerwe14b0a00074c6db0",
+      "58f9ceb4e14bga00074c6db0",
+      "58f9ceb4e14b0ah0s74c6db0"
+    ],
+    "name": "metatest",
+    "namespaces_limit": 2,
+    "parameters": [
+      {
+        "name": "BATCH_SIZE",
+        "value": {
+          "param": [
+            300
+          ],
+          "type": "absolute"
+        }
+      }, {
+        "name": "HIDDEN_SIZE",
+        "value": {
+          "number_layers": [
+            1
+          ],
+          "number_units": [
+            30,
+            40
+          ],
+          "type": "absolute"
+        }
+      }, {
+        "name": "LEARNING_RATE",
+        "value": {
+          "final-value": 0.1,
+          "initial-value": 0.01,
+          "interval": 0.01,
+          "type": "lineal"
+        }
+      }
+    ],
+    "template": "ml-ex-nn-tf-mod",
+    "time_out": 90,
+    "url": "https://osos-master-0.osos.com:8443"
+  },
+  "links": {
+    "experiments": [
+      "/experiments/58f9ceb4e14b0a00074c6db0",
+      "/experiments/58f9ceb4e14b0a00074c6db1"
+    ]
+  }
+}

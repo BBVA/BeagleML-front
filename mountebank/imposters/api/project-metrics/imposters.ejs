@@ -1,0 +1,17 @@
+{
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/project-metrics/get.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    }
+  }],
+  "predicates": [{
+    "matches": {
+      "path": "/api/v1/project-metrics"
+    }
+  }]
+}

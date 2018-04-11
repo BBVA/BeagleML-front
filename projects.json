@@ -1,0 +1,55 @@
+{
+  "actions": {
+    "config experiments": "/upload_config",
+    "delete everything": "/delete_everything",
+    "delete pool": "/delete_pool",
+    "delete queue": "/delete_queue",
+    "force the system to namespaces_limit": "/force_namespace_limit",
+    "last config uploaded": "/projects_params",
+    "launch experiments": "/launch_experiments",
+    "modify namespaces_limit": "/set_namespace_limit/<new limit>",
+    "stop automodeling": "/stop_automodeling"
+  },
+  "info": {
+    "limit_experiments": 2,
+    "pool": [
+      {
+        "experimentid": "58f9ceb4e14b0a00074c6db0",
+        "launch_time": "2017-04-21T09:20:12.631000"
+      },
+      {
+        "experimentid": "58f9ceb4e14b0a00074c6db1",
+        "launch_time": "2017-04-21T09:20:15.495000"
+      }
+    ],
+    "projects": [
+      {"name":"project 1",  "_id":"58f5ceb3e14b0a10074c6daf", "queue": 13,  "completed": 5,   "pool": 2,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 2",  "_id":"58f5ceb3e14b0a00074c6daf", "queue": 10,  "completed": 0,   "pool": 1,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 3",  "_id":"58f3ceb3e14b0a00074c6daf", "queue": 11,  "completed": 2,   "pool": 1,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 4",  "_id":"58f2ceb3e14b0a00074c6daf", "queue": 4,   "completed": 0,   "pool": 0,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 5",  "_id":"58f95eb3e14b0a00074c6daf", "queue": 12,  "completed": 0,   "pool": 0,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 6",  "_id":"58f9c6b3e14b0a00074c6daf", "queue": 0,   "completed": 31,  "pool": 0,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 7",  "_id":"58f9ce63e14b0a00074c6daf", "queue": 30,  "completed": 0,   "pool": 0,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 8",  "_id":"58f9ceb3e14b0a00074c6daf", "queue": 41,  "completed": 0,   "pool": 0,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 9",  "_id":"58f9ceb3514b0a00074c6daf", "queue": 41,  "completed": 0,   "pool": 0,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 10", "_id":"58f9ceb3e14b0a10074c6daf", "queue": 21,  "completed": 21,  "pool": 0,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 11", "_id":"58f9ceb3e14b0a20074c6daf", "queue": 21,  "completed": 15,  "pool": 1,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 12", "_id":"58f9ceb3e14b0a30074c6daf", "queue": 0,   "completed": 10,  "pool": 0,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 13", "_id":"58f9ceb3e14b0a40074c6daf", "queue": 13,  "completed": 12,  "pool": 1,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 14", "_id":"58f9ceb3e14b0a50074c6daf", "queue": 9,   "completed": 2,   "pool": 3,  "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 },
+      {"name":"project 15", "_id":"58f9ceb3e14b0a60074c6daf", "queue": 76,  "completed": 45,  "pool": 12, "timeout":0, "stopped": 0, "failed": 0, "accuracy_limit_reached": 0 }
+    ],
+    "queue": [],
+    "state": "Launching experiments"
+  },
+  "links": {
+    "pool": [
+      "/experiments/58f9ceb4e14b0a00074c6db0",
+      "/experiments/58f9ceb4e14b0a00074c6db1"
+    ],
+    "projects": [
+      "/projects/58f9ceb3e14b0a00074c6daf"
+    ],
+    "queue": []
+  }
+}

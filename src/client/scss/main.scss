@@ -1,0 +1,56 @@
+@import 'theme';
+@import '@swimlane/ngx-datatable/release/index';
+@import '@swimlane/ngx-datatable/release/themes/material';
+@import '@swimlane/ngx-datatable/release/assets/icons';
+
+body {
+  background: -webkit-linear-gradient(0deg, rgba(32,50,255, 0.2) 10%, #fff 100%);
+  background: linear-gradient(90deg, rgba(32,50,255, 0.2) 80%, #fff 100%);
+}
+
+md-list-item{
+  display: block;
+}
+
+.is-queue {
+  background: $is-queue;
+  width:20px;
+}
+
+.is-pool {
+  background: $is-pool;
+  width:20px;
+}
+
+.is-completed {
+  background: $is-completed;
+  width:20px;
+}
+
+.is-timeout {
+  background: $is-timeout;
+  width:20px;
+}
+.is-stopped {
+  background: $is-stopped;
+  width:20px;
+}
+.is-accuracy_limit_reached {
+  background: $is-accuracy_limit_reached;
+  width:20px;
+}
+
+.mat-raised-button {
+  text-decoration: none;
+  color: #fff;
+  background-color: rgba(32, 107, 192, 1);
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+}
+
+.dropdown-content li a,
+.dropdown-content li span {
+  color: rgba(32, 107, 192, 1);
+}

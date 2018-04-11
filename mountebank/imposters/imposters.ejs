@@ -1,0 +1,15 @@
+{
+  "imposters": [
+    {
+      "port": 8010,
+      "protocol": "http",
+      "stubs": [
+        <% include api/experiments/imposters.ejs %>,
+        <% include api/models/imposters.ejs %>,
+        <% include api/projects/imposters.ejs %>,
+        <% include api/project-metrics/imposters.ejs %>,
+        <% include api/systems/imposters.ejs %>
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+function (request, response) {
+  var BATCH_SIZE = Math.floor(Math.random() * 400) + 100;
+  var HIDDEN_SIZE = Math.floor(Math.random() * 50) + 40;
+  var LEARNING_RATE = "0.0" + (Math.floor(Math.random() * 9) + 1);
+  var PRODUCTS = Math.floor(Math.random() * 9) + 1;
+  var SAVE_INTERVAL = Math.floor(Math.random() * 130) + 100;
+  var state = Math.floor(Math.random() * 3) + 1;
+  state = state === 1 ? "queue" :
+          (state === 2 ? "ended" : "pool")
+
+  var id = Math.random().toString(36).substring(10);
+
+  response.body = response.body.replace('${BATCH_SIZE}', BATCH_SIZE);
+  response.body = response.body.replace('${HIDDEN_SIZE}', HIDDEN_SIZE);
+  response.body = response.body.replace('${LEARNING_RATE}', LEARNING_RATE);
+  response.body = response.body.replace('${PRODUCTS}', PRODUCTS);
+  response.body = response.body.replace('${SAVE_INTERVAL}', SAVE_INTERVAL);
+  response.body = response.body.replace('${STATE}', state);
+  response.body = response.body.replace('${ID}', id);
+}

@@ -1,0 +1,140 @@
+:host {
+  display: block;
+  background: -webkit-linear-gradient(45deg, #fff 10%, rgba(32, 107, 192, 0.5) 100%);
+  background: linear-gradient(45deg, #fff 10%, rgba(32, 107, 192, 0.5) 100%);
+  padding: 0.5em 1em;
+
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+
+  margin: 1em;
+}
+
+::ng-deep md-grid-tile.mat-grid-tile .mat-figure {
+  align-items: initial;  /*vertical alignment*/
+  justify-content: initial;  /*horizontal alignment*/
+}
+
+::ng-deep .page-count {
+  font-size: 14px;
+}
+
+::ng-deep .grid-a {
+  display: inline-block;
+  width: 49%;
+  padding-right: 1%;
+  vertical-align: top;
+}
+
+::ng-deep .grid-b {
+  display: inline-block;
+  width: 49%;
+  padding: 0%;
+  vertical-align: top;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  padding: 10px;
+  width: 30px;
+}
+
+label {
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid;
+}
+
+md-card {
+  width: 100%;
+  padding: 1em;
+  .open {
+    height: 100%;
+  }
+
+  .close {
+    height: 90px;
+  }
+}
+
+span.bar {
+  color: rgba(32, 107, 192, 1);
+  border-top: solid 1px;
+  display: block;
+  width: 100%;
+}
+
+.card-container {
+  background: red;
+}
+
+.datatable-body span{
+  font-size: 0.8em;
+}
+
+.datatable-body.datatable-body, .datatable-header.datatable-header {
+  width: 100%;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.mat-card {
+  width: 100%;
+  margin: 1em;
+
+  span.title {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+.grid {
+  display: inline-block;
+  width: 48%
+}
+
+.hidden {
+  display: none;
+}
+
+.mat-button, .mat-icon-button, .mat-raised-button {
+  color: white;
+}
+
+.mat-grid-tile {
+  height: 100%;
+}
+
+.mat-toolbar {
+  background: transparent;
+}
+
+.right {
+  text-align: right;
+  vertical-align: top;
+  .mat-toolbar .mat-toolbar-row {
+    text-align: right;
+    display: inline-block;
+  }
+}
+
+.selected {
+  opacity: 0.7;
+}
+
+.system {
+  padding: 1em;
+}
+
+
+#dashboard {
+  height: 100px;
+  figure.mat-figure {
+    vertical-align: top;
+    align-items: inherit;
+  }
+}

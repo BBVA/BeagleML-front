@@ -1,0 +1,44 @@
+<div *ngIf="loading; then loadingTpl else baseTpl"></div>
+
+<ng-template #loadingTpl>
+  <span>
+    Loading... please wait.
+  </span>
+</ng-template>
+
+<md-toolbar>
+  <p>
+    <a md-raised-button (click)="onBrowseModelsClick($event)">
+      <input id="browse-models-btn"
+             type="file"
+             class="hidden"
+             ngFileSelect
+             [options]="modelOptions"
+             (close)="handleClose($event)"
+             (progress)="handleProgress($event)"
+             (cancel)="handleCancel($event)"
+             (submit)="handleSubmit($event)"
+             (onUpload)="handleUpload($event)"
+             (onUploadRejected)="handleUploadRejected($event)">
+      <md-icon aria-label="Browse">folder</md-icon> Add Model Template
+    </a>
+  </p>
+  <p>
+    <a md-raised-button (click)="onBrowseClick($event)">
+      <input id="browse-btn"
+             type="file"
+             class="hidden"
+             ngFileSelect
+             [options]="projectOptions"
+             (close)="handleClose($event)"
+             (progress)="handleProgress($event)"
+             (cancel)="handleCancel($event)"
+             (submit)="handleSubmit($event)"
+             (onUpload)="handleUpload($event)"
+             (onUploadRejected)="handleUploadRejected($event)">
+      <md-icon aria-label="Browse">folder</md-icon> Add Project Definition
+    </a>
+  </p>
+</md-toolbar>
+
+

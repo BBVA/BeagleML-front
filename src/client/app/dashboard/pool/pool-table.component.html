@@ -1,0 +1,30 @@
+<div>
+  <div *ngIf="rows">
+    <ngx-datatable
+            #poolTable
+            class="material"
+            style="height: 190px; font-size:14px"
+            [columnMode]="'force'"
+            [headerHeight]="30"
+            [rowHeight]="30"
+            [footerHeight]="30"
+            [sortType]="'multi'"
+            [scrollbarH]="true"
+            [scrollbarV]="true"
+            [rows]="rows"
+            [selectionType]="'none'">
+      <ngx-datatable-column
+              [cellClass]="getCellClass"
+              [sortable]="false"
+              [canAutoResize]="false"
+              [draggable]="false"
+              [resizeable]="false"
+              [width]="20">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Name"></ngx-datatable-column>
+      <ngx-datatable-column name="ProjectName"></ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div>
+  <div *ngIf="rows">
+    <ngx-datatable
+            #project_table
+            class="material"
+            style="height: 200px;"
+            [columnMode]="'force'"
+            [headerHeight]="30"
+            [rowHeight]="30"
+            [footerHeight]="30"
+            [sortType]="'multi'"
+            [scrollbarH]="true"
+            [scrollbarV]="true"
+            [rows]="rows"
+            [selectionType]="'single'"
+            (select)="onSelect($event)">
+      <ngx-datatable-column name="Date"></ngx-datatable-column>
+      <ngx-datatable-column name="Filename"></ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</div>

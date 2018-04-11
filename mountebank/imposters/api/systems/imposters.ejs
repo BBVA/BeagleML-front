@@ -1,0 +1,65 @@
+{
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/systems/get.json') %>",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "content-type": "application/json"
+      }
+    }
+  }],
+  "predicates": [{
+    "equals": {
+      "path": "/api/v1/systems",
+      "method": "GET"
+    }
+  }],
+  "responses": [{
+    "is": {
+      "statusCode": 204,
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "content-type": "application/json"
+      }
+    }
+  }],
+  "predicates": [{
+    "equals": {
+      "path": "/deleteAll",
+      "method": "DELETE"
+    }
+  }],
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/systems/toggle-state.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    }
+  }],
+  "predicates": [{
+    "matches": {
+      "path": "/api/v1/systems/[^/state-toggle]+",
+      "method": "PUT"
+    }
+  }],
+  "responses": [{
+    "is": {
+      "statusCode": 200,
+      "body": "<%- stringify(filename, 'api/systems/reset.json') %>",
+      "headers": {
+        "content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    }
+  }],
+  "predicates": [{
+    "matches": {
+      "path": "/api/v1/systems/[^/reset]+",
+      "method": "PUT"
+    }
+  }]
+}

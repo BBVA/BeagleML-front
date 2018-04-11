@@ -1,0 +1,33 @@
+{
+  "actions": {
+    "delete experiment": "/experiments/58f9ceb4e14b0a00074c6db0/delete_experiment/",
+    "delete experiment from pool": "/pool/delete_experiment/58f9ceb4e14b0a00074c6db0",
+    "delete experiment from queue": "/queue/delete_experiment/58f9ceb4e14b0a00074c6db0",
+    "prioritize experiment": "/experiments/58f9ceb4e14b0a00074c6db0/prioritize/"
+  },
+  "info": {
+    "_id": "${ID}",
+    "create_time": "2017-04-21T09:19:48.528000",
+    "launch_time": "2017-04-21T09:20:12.631000",
+    "name": "metatestmodel1",
+    "parameters": [
+      {"name":"BATCH_SIZE", "value": "${BATCH_SIZE}"},
+      {"name":"EPOCHS", "value": "1"},
+      {"name":"HIDDEN_SIZE", "value": "${HIDDEN_SIZE}"},
+      {"name":"KAFKA_SERVICE", "value": "automodeling-kafka-svc.modeling"},
+      {"name":"LEARNING_RATE", "value": "${LEARNING_RATE}"},
+      {"name":"METRIC_INTERVAL", "value": "1"},
+      {"name":"RECOVER_SESSION", "value": "false"},
+      {"name":"PRODUCTS", "value": "${PRODUCTS}"},
+      {"name":"SAVE_INTERVAL", "value": "${SAVE_INTERVAL}"},
+      {"name":"STOP_ACCURACY", "value": "1.0"}
+    ],
+    "project_id": "58f9ceb3e14b0a00074c6daf",
+    "project_name": "metatest",
+    "template_name": "ml-ex-nn-tf-mod",
+    "state": "${STATE}"
+  },
+  "links": {
+    "metrics": "/experiments/metrics/metatestmodel1"
+  }
+}

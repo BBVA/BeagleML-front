@@ -1,0 +1,13 @@
+<div>
+
+  <div *ngIf="project; then projectTpl"></div>
+
+  <ng-template #projectTpl>
+    <project-info
+      [name]="project.name"
+      [experiments]="experiments"
+      [parameters]="project.parameters"></project-info>
+  </ng-template>
+  <project-experiments-table [experiments]="experiments"></project-experiments-table>
+</div>
+

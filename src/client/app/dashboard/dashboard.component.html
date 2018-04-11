@@ -1,0 +1,193 @@
+<p></p>
+<div id="row-0">
+  <md-grid-list cols="12">
+    <md-grid-tile [colspan]="9" [rowspan]="1" style="height: 280px;">
+      <md-card class="{{panelOpenState[0] ? 'open' : 'close' }}">
+        <md-accordion>
+          <md-expansion-panel (opened)="togglePanel(0, true)"
+                              (closed)="togglePanel(0, false)">
+            <md-expansion-panel-header>
+              <md-panel-title>
+                Model and project management
+              </md-panel-title>
+            </md-expansion-panel-header>
+            <span class="bar"></span>
+            <sd-project-add></sd-project-add>
+            <project-models-table [models]="models"></project-models-table>
+          </md-expansion-panel>
+        </md-accordion>
+      </md-card>
+    </md-grid-tile>
+
+    <md-grid-tile [colspan]="3" [rowspan]="1" style="height: 230px;">
+      <md-card class="{{panelOpenState[1] ? 'open' : 'close' }}">
+        <md-accordion>
+          <md-expansion-panel (opened)="togglePanel(1, true)"
+                              (closed)="togglePanel(1, false)">
+            <md-expansion-panel-header>
+              <md-panel-title>
+                System configuration
+              </md-panel-title>
+            </md-expansion-panel-header>
+            <span class="bar"></span>
+            <div class="system">
+              <p class="right">
+                <mat-slide-toggle [(ngModel)]="toggleRunning">Running</mat-slide-toggle>
+              </p>
+              <p class="right">
+                <span> Experiment limit: <input type="number" [value]="experimentsLimit" (input)="experimentsLimit = $event.target.value"></span>
+              </p>
+              <div>
+                <md-toolbar>
+                  <span class="fill-space"></span>
+                  <a md-raised-button (click)='systemUpdate()'>
+                    <md-icon aria-label="Update">update</md-icon>
+                    Update
+                  </a>
+                </md-toolbar>
+              </div>
+            </div>
+
+          </md-expansion-panel>
+        </md-accordion>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
+
+<div id='row-1'>
+  <md-grid-list cols="12" style="height: 200px;">
+    <md-grid-tile [colspan]="6" [rowspan]="1">
+      <md-card class="{{panelOpenState[2] ? 'open' : 'close' }}">
+        <md-accordion>
+          <md-expansion-panel (opened)="togglePanel(2, true)"
+                              (closed)="togglePanel(2, false)" [expanded]="true">
+            <md-expansion-panel-header>
+              <md-panel-title>
+                Experiments running
+              </md-panel-title>
+            </md-expansion-panel-header>
+            <span class="bar"></span>
+            <pool-table [experiments]="pool"></pool-table>
+          </md-expansion-panel>
+        </md-accordion>
+      </md-card>
+    </md-grid-tile>
+    <md-grid-tile [colspan]="6" [rowspan]="1">
+      <md-card class="{{panelOpenState[3] ? 'open' : 'close' }}">
+        <md-accordion>
+          <md-expansion-panel (opened)="togglePanel(3, true)"
+                              (closed)="togglePanel(3, false)" [expanded]="true">
+            <md-expansion-panel-header>
+              <md-panel-title>
+                Experiments on queue
+              </md-panel-title>
+            </md-expansion-panel-header>
+            <span class="bar"></span>
+            <pool-table [experiments]="queue"></pool-table>
+          </md-expansion-panel>
+        </md-accordion>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
+
+<div>
+  <md-grid-list cols="2" rowHeight="50px">
+    <md-grid-tile [colspan]="1" [rowspan]="1">
+      <md-toolbar>
+        <div *ngIf="system && system.running; then runningTpl else pauseTpl"></div>
+        <ng-template #runningTpl>
+          <a md-raised-button (click)='systemStop()'>
+            <md-icon aria-label="Stop system">pause_circle_outline</md-icon>
+            Stop
+          </a>
+        </ng-template>
+        <ng-template #pauseTpl>
+          <a md-raised-button (click)='systemPlay()'>
+            <md-icon aria-label="Play system">play_circle_outline</md-icon>
+            Play
+          </a>
+        </ng-template>
+        <a md-raised-button (click)='systemReset()'>
+          <md-icon aria-label="Reset system">delete_forever</md-icon>
+          Reset
+        </a>
+      </md-toolbar>
+    </md-grid-tile>
+    <md-grid-tile [colspan]="1" [rowspan]="1">
+      <md-toolbar>
+        <span class="fill-space"></span>
+
+        <button md-raised-button (click)="changeFilter('done')" [ngClass]="filterSelected=='done'?'selected':''">
+          Only done
+        </button>
+        <button md-raised-button (click)="changeFilter('not_started')" [ngClass]="filterSelected=='not_started'?'selected':''">
+          Not started
+        </button>
+        <button md-raised-button (click)="changeFilter('all')" [ngClass]="(filterSelected!='done'&&filterSelected!='not_started')?'selected':''">
+          All
+        </button>
+      </md-toolbar>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
+<div>
+  <ngx-datatable
+    #project_table
+    class="material"
+    [columnMode]="'flex'"
+    [headerHeight]="40"
+    [rowHeight]="'auto'"
+    [footerHeight]="40"
+    [sortType]="'multi'"
+    [limit]="3"
+    [loadingIndicator]="loading"
+    [rows]="projects">
+    <ngx-datatable-column name="Project Name" [flexGrow]="2">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{ row.name }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Total" [flexGrow]="1">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{ row.total }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Running" [flexGrow]="1">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{ row.pool }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Queue" [flexGrow]="1"></ngx-datatable-column>
+    <ngx-datatable-column name="Completed" [flexGrow]="1"></ngx-datatable-column>
+    <ngx-datatable-column name="Timeout" [flexGrow]="1"></ngx-datatable-column>
+    <ngx-datatable-column name="Accuracy Target" [flexGrow]="1">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{ row.accuracy_limit_reached }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Stopped" [flexGrow]="1">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{ row.stopped }}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Actions" [flexGrow]="1">
+      <ng-template let-column="column" ngx-datatable-header-template>
+        <span>{{column.name}}</span>
+      </ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        <a md-mini-fab routerLink="/project/{{row.id || row._id}}">
+          <md-icon aria-label="Project details">info</md-icon>
+        </a>
+        <a md-mini-fab (click)="deleteProject(row.id || row._id)">
+          <md-icon aria-label="Remove experiments">power_settings_new</md-icon>
+        </a>
+
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+<md-dialog-error></md-dialog-error>

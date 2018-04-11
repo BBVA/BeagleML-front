@@ -1,0 +1,19 @@
+[
+  {
+    "limit_experiments": 2,
+    "pool": [
+      {
+        "experimentid": "58f9ceb4e14b0a00074c6db0",
+        "launch_time": "2017-04-21T09:20:12.631000"
+      },
+      {
+        "experimentid": "58f9ceb4e14b0a00074c6db1",
+        "launch_time": "2017-04-21T09:20:15.495000"
+      }
+    ],
+    "queue": [
+
+    ],
+    "state": "Launching experiments"
+  }
+]
