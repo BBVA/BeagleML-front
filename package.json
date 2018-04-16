@@ -1,9 +1,9 @@
 {
-  "name": "automodeling-front",
+  "name": "beagleml-front",
   "version": "0.5.11",
-  "description": "AI Model Tunner",
+  "description": "BeagleML",
   "repository": {
-    "url": "https://github.com/bbva/ai-model-tuner"
+    "url": "https://github.com/bbvalabs/BeagleML-front"
   },
   "scripts": {
     "build.dev": "gulp build.dev --color --env-config dev",
@@ -44,7 +44,7 @@
     "serve.compodoc": "node_modules/.bin/compodoc -s"
   },
   "author": "Innovation Labs - BBVA",
-  "license": "MIT",
+  "license": "Apache 2.0",
   "devDependencies": {
     "@angular/compiler-cli": "4.3.6",
     "@angular/platform-server": "4.3.6",
